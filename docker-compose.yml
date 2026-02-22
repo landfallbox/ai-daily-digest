@@ -1,0 +1,10 @@
+services:
+  ai-daily-digest:
+    build: .
+    container_name: ai-daily-digest
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
